@@ -1,6 +1,7 @@
 'use strict';
 
 const _Node = require ('/.buildNode');
+const node = new _Node(); 
 
 class LinkedList {
   constructor() {
@@ -65,3 +66,5 @@ class LinkedList {
     previousNode.next = currNode.next; //item was found, change the previous nodes ptr to equal the ptr of the item you are removing--this removes the item you were looking for, and keeps the links intact through list
   }  //this covers deleting from beginning of list and middle of list, and end of list (previousNode.next will just be equal to node now as it is the new end)
 }
+
+module.exports = LinkedList;
