@@ -23,10 +23,27 @@ function main() {
 
   // SLL.insertAt(2, 'INSERTING AT');
   // SLL.insertBefore('Boomer', 'Athena');
-  SLL.insertAt(3, 'Kat');
+  // SLL.insertAt(3, 'Kat');
+  // SLL.insertAfter('Helo', 'Hotdog');
+  // SLL.remove('Tauhida');
 
-  console.log(JSON.stringify(SLL));
+  // console.log(JSON.stringify(SLL));
+
+  //need a while loop to look at each item in the list
+  //for each item, console.log(value)
+  function display(lnkdlst) {
+    let currNode = lnkdlst.head;
+    let previousNode = lnkdlst.head;
+    while(currNode !== null) {
+      console.log(currNode.value);
+      previousNode = currNode;
+      currNode = currNode.next;
+    }
+  }
+
+  display(SLL);
   
 }
 
 main();
+
