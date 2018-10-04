@@ -33,15 +33,57 @@ function main() {
   //for each item, console.log(value)
   function display(lnkdlst) {
     let currNode = lnkdlst.head;
-    let previousNode = lnkdlst.head;
     while(currNode !== null) {
       console.log(currNode.value);
-      previousNode = currNode;
       currNode = currNode.next;
     }
   }
 
-  display(SLL);
+  //size: returns the size of the linked list.
+  function size(lnkdlst) {
+    let currNode = lnkdlst.head;
+    let count = 0;
+    while(currNode !== null) {
+      currNode = currNode.next; //loop through the list and increment the count 
+      count++;
+    }
+    console.log(count);
+  }
+
+  function isEmpty(lnkdlst) {
+    if(lnkdlst.head === null) {
+      console.log('List is empty');
+    }
+    else {
+      console.log('List is not empty');
+    } 
+  }
+
+  //findPrevious: finds the node before the item you are looking for
+  function previous(lnkdlst, item) {
+    let currNode = lnkdlst.head;
+    let previousNode = lnkdlst.head;
+    if(!lnkdlst.head) {
+      return null;
+    }
+    while(currNode !== item && currNode !== null) {
+      if(currNode.next === null) {
+        return null;
+      }
+      previousNode = currNode;
+      currNode = currNode.next; 
+    }
+    //currNode === item 
+   
+    console.log(currNode); 
+    return currNode;  
+    
+  }
+ 
+  // display(SLL);
+  // size(SLL);
+  isEmpty(SLL);
+  previous(SLL, 'Boomer');
   
 }
 
