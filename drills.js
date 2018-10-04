@@ -14,11 +14,12 @@ function main() {
   SLL.insertLast('Tauhida');
 
   //remove squirrel from list 
-  SLL.remove('squirrel');
+  // SLL.remove('squirrel');
 
   //Implement a function called insertBefore() 
   //in the class that inserts a new node before a given node containing a key
-  SLL.insertBefore('Starbuck', 'newItem'); 
+  // SLL.insertBefore('Starbuck', 'newItem'); 
+  SLL.insertAfter('Boomer', 'itemAfter');
 
   console.log(JSON.stringify(SLL));
   

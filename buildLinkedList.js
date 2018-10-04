@@ -28,6 +28,26 @@ class LinkedList {
     previousNode.next = new _Node(itemInserted, currNode);
   } 
 
+  //Inserting a new node after the node containing the key
+  //find node, change pointer to point to new node, set new node ptr to previousNode.next
+  insertAfter(node, itemInserted) {
+    let currNode = this.head; //start at the beginning
+    // let nextNode = currNode.next;
+    if (!this.head){
+      return null; //if list is empty, return null
+    }
+    while(currNode.value !== node) { //loop through list until null is returned or value is found
+      if (currNode.next === null) { //means you got to end of list and value was not found
+        return null;
+      }
+      else {
+        currNode = currNode.next;  //otherwise keep looking
+      }
+    }
+    let newNode = new _Node(itemInserted, currNode.next);
+    currNode.next = newNode;
+  }
+ 
   //Inserting at end of list
   insertLast(item) {
     if(this.head === null){ 
