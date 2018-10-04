@@ -1,6 +1,6 @@
 'use strict';
 
-const _Node = require ('/.buildNode');
+const _Node = require ('./buildNode');
 const node = new _Node(); 
 
 class LinkedList {
