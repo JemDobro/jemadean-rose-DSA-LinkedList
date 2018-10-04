@@ -13,6 +13,21 @@ class LinkedList {
     this.head = new _Node(item, this.head);
   }
 
+  //Inserting a node before a given node containing a key 
+  insertBefore(node, itemInserted) {
+    let currNode = this.head; //start at the head
+    let previousNode = this.head; //keep track of previous node
+    while ((currNode !== null) && (currNode.value !== node)) {  //loop through looking for node where item matches value--if currNode has a value and that value is not the item,
+      previousNode = currNode; //save the previous node
+      currNode = currNode.next; //now currNode is the new one you are looking at 
+    }
+    if(currNode === null){
+      console.log('Node not found');
+      return; //if you get to an empty node, you are at the end of the list, return a not found msg
+    }
+    previousNode.next = new _Node(itemInserted, currNode);
+  } 
+
   //Inserting at end of list
   insertLast(item) {
     if(this.head === null){ 

@@ -5,6 +5,23 @@ const linkedList = new LinkedList();
 function main() {   
   let SLL = new LinkedList(); 
   SLL.insertFirst('Apollo');
-  console.log(SLL);
+  
+
+  SLL.insertLast('Boomer');
+  SLL.insertLast('Helo');
+  SLL.insertLast('Husker');
+  SLL.insertLast('Starbuck');
+  SLL.insertLast('Tauhida');
+
+  //remove squirrel from list 
+  SLL.remove('squirrel');
+
+  //Implement a function called insertBefore() 
+  //in the class that inserts a new node before a given node containing a key
+  SLL.insertBefore('Starbuck', 'newItem'); 
+
+  console.log(JSON.stringify(SLL));
+  
 }
+
 main();
