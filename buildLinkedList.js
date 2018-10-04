@@ -47,6 +47,25 @@ class LinkedList {
     let newNode = new _Node(itemInserted, currNode.next);
     currNode.next = newNode;
   }
+
+  //Implement a function called insertAt() that inserts an item at a specific position in the linked list
+  insertAt(position, item) {
+    let count = 1; 
+    let currNode = this.head;
+    let previousNode = this.head;
+
+    if(!this.head) {
+      return null;
+    }
+    //
+    while(count !== position) {
+      previousNode = currNode;
+      currNode = currNode.next; 
+      count++; 
+    }
+    //count === position
+    previousNode.next = new _Node(item, currNode);
+  }
  
   //Inserting at end of list
   insertLast(item) {
