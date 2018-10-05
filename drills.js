@@ -47,7 +47,7 @@ function main() {
       currNode = currNode.next; //loop through the list and increment the count 
       count++;
     }
-    console.log(count);
+    return count;
   }
 
   function isEmpty(lnkdlst) {
@@ -66,25 +66,34 @@ function main() {
     if(!lnkdlst.head) {
       return null;
     }
-    while(currNode !== item && currNode !== null) {
+    while(currNode.value !== item && currNode !== null) {
       if(currNode.next === null) {
         return null;
       }
       previousNode = currNode;
       currNode = currNode.next; 
     }
-    //currNode === item 
    
-    console.log(currNode); 
-    return currNode;  
-    
+    return previousNode.value;     
   }
- 
-  // display(SLL);
-  // size(SLL);
+
+  function findLast(lnkdlst) {
+    let currNode = lnkdlst.head;
+    if(!lnkdlst.head) {
+      return null;
+    }
+    while(currNode.next !== null) {
+      currNode = currNode.next;
+    }
+    return currNode;
+  }
+
+  display(SLL);
+  console.log(size(SLL));
   isEmpty(SLL);
-  previous(SLL, 'Boomer');
-  
+  console.log(previous(SLL, 'Boomer'));
+  console.log(findLast(SLL));
+   
 }
 
 main();
